@@ -16,10 +16,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
+            <router-link class="nav-link" to="/contact">Contact Us</router-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -32,13 +32,17 @@
               Product
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Product List</a></li>
-              <li><a class="dropdown-item" href="#">Product Detail</a></li>
+              <li>
+                <router-link class="dropdown-item" to="/product-list">Product List</router-link>
+              </li>
+              <li>
+                <router-link class="dropdown-item" to="/product">Product Detail</router-link>
+              </li>
             </ul>
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <a class="nav-link" aria-disabled="true">Login</a>
+          <router-link class="nav-link" aria-disabled="true" to="/login">Login</router-link>
         </form>
       </div>
     </div>
