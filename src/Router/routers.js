@@ -3,9 +3,28 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ContactPage from '@/components/Home/ContactPage.vue'
 import HomePage from '@/components/Home/HomePage.vue'
 import LogIn from '@/components/Authentication/LogIn.vue'
+import NoAccess from '@/components/Layout/NoAccess.vue'
 import NotFound from '@/components/Layout/NotFound.vue'
 import ProductDetail from '@/components/Product/ProductDetail.vue'
 import ProductList from '@/components/Product/ProductList.vue'
+
+const isAdmin = () => {
+  const isAdmin = false
+  if (isAdmin) {
+    return true
+  }
+  return {
+    name: 'noAccess',
+  }
+}
+
+const isAuthenticated = () => {
+  const isAuthenticated = true
+  if (isAuthenticated) {
+    return true
+  }
+  return false
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,15 +47,7 @@ const router = createRouter({
       path: '/product-list',
       component: ProductList,
       name: 'productList',
-      beforeEnter: (to, from) => {
-        console.log('Product List Before Guard')
-        console.log(to, from)
-        const isAdmin = false
-        if (isAdmin) {
-          return true
-        }
-        return false
-      },
+      beforeEnter: [isAdmin, isAuthenticated],
     },
     {
       path: '/product',
@@ -52,6 +63,11 @@ const router = createRouter({
       path: '/login',
       component: LogIn,
       name: 'login',
+    },
+    {
+      path: '/noaccess',
+      component: NoAccess,
+      name: 'noAccess',
     },
     { path: '/:catchAll(.*)', component: NotFound, name: 'notFound' },
   ],
