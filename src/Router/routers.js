@@ -20,6 +20,10 @@ const router = createRouter({
       name: 'contact',
     },
     {
+      path: '/contact-us',
+      redirect: { name: 'contact' },
+    },
+    {
       path: '/product-list',
       component: ProductList,
       name: 'productList',
@@ -27,12 +31,12 @@ const router = createRouter({
     {
       path: '/product',
       component: ProductDetail,
-      name: 'productDetail',
     },
     {
       path: '/product/:productId/:categoryId?',
       component: ProductDetail,
-      name: 'productDetailWithId',
+      name: 'productDetail',
+      props: true,
     },
     {
       path: '/login',
