@@ -71,6 +71,7 @@ const router = createRouter({
     },
     { path: '/:catchAll(.*)', component: NotFound, name: 'notFound' },
   ],
+  linkActiveClass: 'active btn btn-primary',
 })
 
 router.beforeEach((to, from) => {
