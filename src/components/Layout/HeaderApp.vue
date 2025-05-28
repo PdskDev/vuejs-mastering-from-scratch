@@ -16,10 +16,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
+            <router-link class="nav-link active" aria-current="page" :to="{ name: 'home' }"
+              >Home</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/contact">Contact Us</router-link>
+            <router-link class="nav-link" :to="{ name: 'contact' }">Contact Us</router-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -33,7 +35,9 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <router-link class="dropdown-item" to="/product-list">Product List</router-link>
+                <router-link class="dropdown-item" :to="{ name: 'productList' }"
+                  >Product List</router-link
+                >
               </li>
               <li>
                 <router-link class="dropdown-item" to="/product">Product Detail</router-link>
