@@ -7,6 +7,8 @@
     <div v-else>No product Id in parameter</div>
     <div v-if="categoryId">
       <p>Category ID: {{ categoryId }}</p>
+      <!--<button class="btn btn-secondary" @click="$router.back()">Back</button>-->
+      <button class="btn btn-secondary" @click="$router.go(-1)">Back</button>
     </div>
   </div>
 </template>

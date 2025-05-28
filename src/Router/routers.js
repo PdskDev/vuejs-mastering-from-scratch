@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ContactPage from '@/components/Home/ContactPage.vue'
 import HomePage from '@/components/Home/HomePage.vue'
 import LoginPage from '@/components/Home/LoginPage.vue'
+import NotFound from '@/components/Layout/NotFound.vue'
 import ProductDetail from '@/components/Product/ProductDetail.vue'
 import ProductList from '@/components/Product/ProductList.vue'
 
@@ -43,6 +44,7 @@ const router = createRouter({
       component: LoginPage,
       name: 'login',
     },
+    { path: '/:catchAll(.*)', component: NotFound, name: 'notFound' },
   ],
 })
 
