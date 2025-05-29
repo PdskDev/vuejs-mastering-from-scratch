@@ -6,5 +6,13 @@
     { "id": 4, "name": "Smartphone", "category": "A" },
     { "id": 5, "name": "PC Computer", "category": "A" },
     { "id": 6, "name": "Donut", "category": "C" }
+  ],
+  "users": [
+    { "id": 1, "name": "John", "email": "k8oEo@example.com" },
+    { "id": 2, "name": "Jane", "email": "oH2eO@example.com" },
+    { "id": 3, "name": "Franck", "email": "b6VzF@example.com" },
+    { "id": 4, "name": "Alice", "email": "lM6aD@example.com" },
+    { "id": 5, "name": "Bob", "email": "b6VzF@example.com" },
+    { "id": 6, "name": "Nadet", "email": "586aD@example.com" }
   ]
 }
