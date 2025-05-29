@@ -2,17 +2,17 @@
   <CounterWidget />
   <div class="text-center">
     <p>Let's play the game!</p>
-    <h2 class="text-primary pb-3">Current Score: {{ gameStore.score }}</h2>
-    <span class="text-primary pb-3">Max score: {{ gameStore.maxHeath }}</span>
+    <h2 class="text-primary pb-3">Current Score: {{ gameStore.getScore }}</h2>
+    <span class="text-primary pb-3">Max score: {{ gameStore.getHealth }}</span>
     <div class="row">
       <div class="col-3 offset-1">
-        <button class="form-control btn btn-success p-4">Increment</button>
+        <button class="form-control btn btn-success p-4" @click="incrementScore">Increment</button>
       </div>
       <div class="col-3">
-        <button class="form-control btn btn-danger p-4">Decrement</button>
+        <button class="form-control btn btn-danger p-4" @click="decrementScore">Decrement</button>
       </div>
       <div class="col-3">
-        <button class="form-control btn btn-warning p-4">Random</button>
+        <button class="form-control btn btn-warning p-4" @click="randomScore">Random</button>
       </div>
     </div>
   </div>
@@ -23,4 +23,16 @@ import CounterWidget from '../counter/CounterWidget.vue'
 import { useGameStore } from '@/store/gameStore'
 
 const gameStore = useGameStore()
+
+function incrementScore() {
+  gameStore.score += Math.floor(Math.random() * 30) + 1
+}
+
+function decrementScore() {
+  gameStore.score -= Math.floor(Math.random() * 30) + 1
+}
+
+function randomScore() {
+  Math.random() > 0.5 ? incrementScore() : decrementScore()
+}
 </script>
