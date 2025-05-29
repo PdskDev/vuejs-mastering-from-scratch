@@ -2,14 +2,14 @@ import { defineStore } from 'pinia'
 
 export const useGameStore = defineStore('gameStore', {
   state: () => ({
-    score: 0,
+    score: 50,
     maxHeath: 100,
     maxAttack: 30,
     maxDefense: 10,
   }),
 
   getters: {
-    getHealth: (state) => state.maxHeath,
+    getWiningScore: (state) => state.maxHeath,
     getAttack: (state) => state.maxAttack,
     getDefense: (state) => state.maxDefense,
     getScore: (state) => state.score,
@@ -26,6 +26,9 @@ export const useGameStore = defineStore('gameStore', {
       let defense = Math.floor(Math.random() * this.maxDefense) + 1
       console.log('defense is: ', defense)
       return (this.score -= defense)
+    },
+    resetScore() {
+      this.score = 50
     },
   },
 })
