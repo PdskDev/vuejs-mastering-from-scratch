@@ -1,0 +1,10 @@
+{
+  "products": [
+    { "id": 1, "name": "TV Box", "category": "A" },
+    { "id": 2, "name": "SUV Car", "category": "B" },
+    { "id": 3, "name": "Electric Bike3", "category": "B" },
+    { "id": 4, "name": "Smartphone", "category": "A" },
+    { "id": 5, "name": "PC Computer", "category": "A" },
+    { "id": 6, "name": "Donut", "category": "C" }
+  ]
+}

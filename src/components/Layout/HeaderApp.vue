@@ -44,6 +44,9 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" :to="{ name: 'users' }">Users</router-link>
+          </li>
         </ul>
         <form class="d-flex" role="search">
           <router-link class="nav-link" aria-disabled="true" to="/login">Login</router-link>

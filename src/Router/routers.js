@@ -7,6 +7,7 @@ import NoAccess from '@/components/Layout/NoAccess.vue'
 import NotFound from '@/components/Layout/NotFound.vue'
 import ProductDetail from '@/components/Product/ProductDetail.vue'
 import ProductList from '@/components/Product/ProductList.vue'
+import UserList from '@/components/User/UserList.vue'
 
 const isAdmin = () => {
   const isAdmin = false
@@ -58,6 +59,11 @@ const router = createRouter({
       component: ProductDetail,
       name: 'productDetail',
       props: true,
+    },
+    {
+      path: '/users',
+      component: UserList,
+      name: 'users',
     },
     {
       path: '/login',
