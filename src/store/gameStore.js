@@ -9,21 +9,23 @@ export const useGameStore = defineStore('gameStore', {
   }),
 
   getters: {
-    /* getHealth: (state) => state.maxHeath,
+    getHealth: (state) => state.maxHeath,
     getAttack: (state) => state.maxAttack,
-    getDefense: (state) => state.maxDefense, */
+    getDefense: (state) => state.maxDefense,
     getScore: (state) => state.score,
-    getNextAttack() {
+  },
+  actions: {
+    setNextAttack() {
       console.log('get next attack')
       let attack = Math.floor(Math.random() * this.maxAttack) + 1
       console.log('attack is: ', attack)
-      return attack
+      return (this.score += attack)
     },
-    getNextDefense() {
+    setNextDefense() {
       console.log('get next defense')
       let defense = Math.floor(Math.random() * this.maxDefense) + 1
       console.log('defense is: ', defense)
-      return defense
+      return (this.score -= defense)
     },
   },
 })

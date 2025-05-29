@@ -25,11 +25,11 @@ import { useGameStore } from '@/store/gameStore'
 const gameStore = useGameStore()
 
 function incrementScore() {
-  gameStore.score += Math.floor(Math.random() * 30) + 1
+  gameStore.setNextAttack()
 }
 
 function decrementScore() {
-  gameStore.score -= Math.floor(Math.random() * 30) + 1
+  gameStore.setNextDefense()
 }
 
 function randomScore() {
