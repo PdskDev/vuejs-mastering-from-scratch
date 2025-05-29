@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-center p-5 m-5" v-if="userList.isLoading">
-    <span class="loader"></span>
+    <LoaderSpinner />
   </div>
   <div class="container p-4 m-3 bg-white" v-if="!userList.isLoading">
     <div v-if="userList.users.length > 0">
@@ -53,40 +53,3 @@ const loadProducts = () => {
   })
 }
 </script>
-<style scoped>
-.loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  position: relative;
-  transform: rotate(45deg);
-  background: #fff;
-}
-.loader::before {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  inset: 0px;
-  border-radius: 50%;
-  border: 24px solid #ff3d00;
-  animation: prixClipFix 2s infinite linear;
-}
-
-@keyframes prixClipFix {
-  0% {
-    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
-  }
-  25% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
-  }
-  50% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
-  }
-  75% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
-  }
-  100% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
-  }
-}
-</style>
