@@ -15,18 +15,18 @@ export const useGameStore = defineStore('gameStore', () => {
 
   const setNextAttack = () => {
     console.log('get next attack')
-    let attack = Math.floor(Math.random() * this.maxAttack) + 1
+    let attack = Math.floor(Math.random() * maxAttack.value) + 1
     console.log('attack is: ', attack)
-    return (this.score += attack)
+    return (score.value += attack)
   }
   const setNextDefense = () => {
     console.log('get next defense')
-    let defense = Math.floor(Math.random() * this.maxDefense) + 1
+    let defense = Math.floor(Math.random() * maxDefense.value) + 1
     console.log('defense is: ', defense)
-    return (this.score -= defense)
+    return (score.value -= defense)
   }
   const resetScore = () => {
-    this.score = 50
+    score.value = 50
   }
 
   return {
