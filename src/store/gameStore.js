@@ -30,14 +30,17 @@ export const useGameStore = defineStore('gameStore', () => {
   }
 
   return {
+    //state
     score,
     maxHeath,
     maxAttack,
     maxDefense,
+    //getters
     getWiningScore,
     getAttack,
     getDefense,
     getScore,
+    //actions
     setNextAttack,
     setNextDefense,
     resetScore,
