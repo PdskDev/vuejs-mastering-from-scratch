@@ -1,6 +1,6 @@
 <template>
   <HeaderApp />
-  <router-view></router-view>
+  <RouterView />
   <FooterApp />
 </template>
 
